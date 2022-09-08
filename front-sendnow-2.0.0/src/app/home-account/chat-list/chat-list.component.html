@@ -1,0 +1,26 @@
+
+
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col" *ngFor="let chat of chats">
+            <app-chat [chat]="chat"></app-chat>
+        </div>
+
+        <div class="col">
+            <app-chat></app-chat>
+        </div>
+        <div class="col">
+            <app-chat></app-chat>
+        </div>
+
+        <!-- <div class="container w-100">
+            <ngb-alert [dismissible]="false" class="w-100">
+                <strong>Sorry,</strong> Any Chat Was Found!.
+            </ngb-alert>
+        </div> -->
+
+    </div>
+
+</div>

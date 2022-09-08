@@ -1,0 +1,22 @@
+
+<div class="modal-header modal-header-dark bg-danger bg-opacity-75">
+
+    <h5 class="modal-title text-light">Delete Contact</h5>
+    <button type="button" class="btn-close btn-light" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+
+</div>
+
+<div class="modal-body">
+
+    <div class="alert alert-danger" role="alert">
+        ¿¡Esta seguro de querer eliminar este contacto de su lista de contactos¡?
+    </div>
+
+</div>
+
+<div class="modal-footer">
+
+    <button type="button" class="btn btn-outline-danger" (click)="operationDelete()">Delete</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancel</button>
+
+</div>

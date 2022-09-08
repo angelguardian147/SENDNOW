@@ -1,0 +1,60 @@
+
+<div class="container my-5 py-5">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col" *ngFor="let clt of this.clientService.contacts">
+            <app-card [clt]="clt"></app-card>
+        </div>
+
+        <div class="container w-100">
+            <ngb-alert [dismissible]="false" *ngIf="listEmpty()" class="w-100">
+                <strong>Sorry,</strong> Any Contact Was Found!.
+            </ngb-alert>
+        </div>
+
+    </div>
+
+    <div class="btn-group-vertical position-fixed top-0 end-0 m-5 pt-5" role="group" aria-label="Vertical button group">
+        
+        <button type="button" (click)="getClients()" class="btn btn-primary m-2 rounded shadow-lg" placement="start" ngbTooltip="Contactos en SendNow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill"
+                viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd"
+                    d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+            </svg>
+        </button>
+
+        <button type="button" (click)="getPersonalList()" class="btn btn-danger m-2 rounded shadow-lg" placement="start" ngbTooltip="Lista privada">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-heart"
+                viewBox="0 0 16 16">
+                <path
+                    d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z" />
+            </svg>
+        </button>
+
+        <button type="button" class="btn btn-success m-2 rounded shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+            </svg>
+        </button>
+        <button type="button" class="btn btn-dark m-2 rounded shadow-lg" (click)="openModalAddContact()" placement="start" ngbTooltip="Agregar Contacto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-plus-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                <path
+                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4.5 6V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5a.5.5 0 0 1 1 0Z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <app-chat-room></app-chat-room>
+    </div>
+
+</div>

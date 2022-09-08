@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-dark bg-success navbar-expand-lg fixed-top">
+
+    <div class="container-fluid">
+
+        <button class="btn btn-outline-light me-4" type="button" (click)="openMenu()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" routerLink="">
+            <!-- <img src="../../assets/imagenes/send.png" alt="logo" width="30" height="24"> -->
+            SendNow
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav w-75 me-auto mb-2 mb-lg-0 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="login">Login</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" (keyup)="find()" [(ngModel)]="search" name="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" (click)="find()" type="button">Search</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</nav>

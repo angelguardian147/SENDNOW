@@ -1,0 +1,27 @@
+
+<div class="offcanvas-header offcanvas-header-dark bg-success bg-opacity-75">
+
+    <h5 class="offcanvas-title">SendNow</h5>
+    <button type="button" class="btn-close text-reset" aria-label="Close"
+        (click)="activeOffcanvas.dismiss('Cross click')"></button>
+
+</div>
+
+<div class="offcanvas-body">
+
+    <div class="list-group list-group-flush">
+        <a routerLinkActive="active" routerLink="" class="list-group-item list-group-item-action" aria-current="true">
+            Home
+        </a>
+        <a routerLink="login" class="list-group-item list-group-item-action">Login</a>
+    </div>
+
+    <div class="list-group list-group-flush p-3" *ngIf="loginService.isAuth;">
+        <a routerLink="account" class="list-group-item list-group-item-action" aria-current="true">
+            Contacts
+        </a>
+        <a routerLink="account/chats" class="list-group-item list-group-item-action">Chats</a>
+        <a (click)="logOut()" href="#" class="list-group-item list-group-item-action">Log Out</a>
+    </div>
+
+</div>

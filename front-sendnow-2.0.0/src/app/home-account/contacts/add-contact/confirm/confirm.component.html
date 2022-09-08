@@ -1,0 +1,22 @@
+
+<div class="modal-header modal-header-dark bg-primary bg-opacity-75">
+
+    <h5 class="modal-title text-light">Add Contact</h5>
+    <button type="button" class="btn-close btn-light" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+
+</div>
+
+<div class="modal-body">
+
+    <div class="alert alert-primary" role="primary">
+        Este contacto no se encuentra registrado en SendNow ¿Áun así quiere agregar este contacto a su lista personal de contactos?
+    </div>
+
+</div>
+
+<div class="modal-footer">
+
+    <button type="button" class="btn btn-outline-primary" (click)="addContact()">Add</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancel</button>
+
+</div>
